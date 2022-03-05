@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Archivo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Operaciones">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openRegister" text="Registrar" />
+              <MenuItem mnemonicParsing="false" onAction="#showRegister" text="Mostrar registros" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="309.0" prefWidth="600.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label text="Dinero Ganado:">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="earnedLabel" text="0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label text="Dinero Perdido:">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="lostLabel" text="0">
+                     <HBox.margin>
+                        <Insets left="2.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <Label text="Balance:">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="balanceLable" text="0">
+                     <HBox.margin>
+                        <Insets left="65.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <Label text="BIENVENIDO A EL BANCO ALFA">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="200.0" top="50.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
