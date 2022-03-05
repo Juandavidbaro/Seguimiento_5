@@ -64,12 +64,12 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <DatePicker>
+                  <DatePicker fx:id="minDate">
                      <VBox.margin>
                         <Insets bottom="5.0" top="10.0" />
                      </VBox.margin>
                   </DatePicker>
-                  <DatePicker>
+                  <DatePicker fx:id="maxDate">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -81,8 +81,8 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="70.0" prefWidth="62.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Buscar" />
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="57.0" text="Normal">
+                  <Button mnemonicParsing="false" onAction="#applyFilter" prefHeight="25.0" prefWidth="57.0" text="Buscar" />
+                  <Button mnemonicParsing="false" onAction="#deleteFilter" prefHeight="25.0" prefWidth="57.0" text="Normal">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>

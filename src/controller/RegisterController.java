@@ -56,8 +56,9 @@ public class RegisterController {
 		}catch(NumberFormatException e) {
 			
 		}
+		
 	}	
-	
+
 	public void setMain(Main main) {
 		this.main=main;
 	}

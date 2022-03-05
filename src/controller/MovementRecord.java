@@ -3,9 +3,9 @@ package controller;
 import java.time.LocalDate;
 
 import application.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -22,6 +22,9 @@ public class MovementRecord {
 	}	
 	
 	@FXML
+	Label amountLabel;
+	
+	@FXML
 	TableView<Movement> movementsTable;
 	
 	@FXML
@@ -35,6 +38,12 @@ public class MovementRecord {
 	
 	@FXML
 	TableColumn<Movement, Double> amountColumn;
+	
+	@FXML
+	DatePicker minDate;
+	
+	@FXML
+	DatePicker maxDate;
 	
 	
 	@FXML
@@ -56,21 +65,30 @@ public class MovementRecord {
 		movementsTable.setItems(main.getData());
 	}
 	
-	
+	/*
 	public void recalculate() {
 		amountLabel.setText("$" + main.refreshBalance());
+	}*/
+	
+	
+	@FXML
+	public void applyFilter() {
+		try {
+			LocalDate min= minDate.getValue();
+			LocalDate max= maxDate.getValue();
+			main.applyFilter(min, max);
+		}catch(Exception e) {
+				
+		}
 	}
-	
-	public void applyFilter(LocalDate minDate, LocalDate maxDate) {
-
-        LocalDate finalMin = minDate == null ? LocalDate.MIN : minDate;
-        LocalDate finalMax = maxDate == null ? LocalDate.MAX : maxDate;
-
-        filteredItems.setPredicate(item -> !finalMin.isAfter(item.getDate()) && !finalMax.isBefore(item.getDate()));
-    }
-	
+	@FXML
 	public void deleteFilter() {
-        filteredItems.setPredicate(item -> true);
-    }
+		try {
+			
+			main.deleteFilter();
+		}catch(Exception e) {
+				
+		}
+	}	
 	
 }

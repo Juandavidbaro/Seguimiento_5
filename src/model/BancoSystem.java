@@ -22,13 +22,17 @@ public class BancoSystem {
 	public FilteredList<Movement> getData(){
 		return filteredItems;
 	}
-	/*
+	
 	public void applyFilter(LocalDate minDate, LocalDate maxDate) {
-        bancoSystem.applyFilter(minDate, maxDate);
+
+        LocalDate finalMin = minDate == null ? LocalDate.MIN : minDate;
+        LocalDate finalMax = maxDate == null ? LocalDate.MAX : maxDate;
+
+        filteredItems.setPredicate(item -> !finalMin.isAfter(item.getDate()) && !finalMax.isBefore(item.getDate()));
     }
 
     public void deleteFilter() {
-        walletSystem.deleteFilter();
+        filteredItems.setPredicate(item -> true);
     }
-    */
+    
 }

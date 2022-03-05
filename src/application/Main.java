@@ -133,10 +133,14 @@ public class Main extends Application {
 	public FilteredList<Movement> getData(){
 		return bancosystem.getData();
 	}
-	/*
-	@FXML 
-	public void <NombreDeLoQueEjecuteElBotón>{ 
-		llamar al método o apply filter o deleteFilter
-	}
-	*/
+	
+	public void applyFilter(LocalDate minDate, LocalDate maxDate) {
+        bancosystem.applyFilter(minDate, maxDate);
+    }
+
+    public void deleteFilter() {
+        bancosystem.deleteFilter();
+    }  
+   
+	
 }
